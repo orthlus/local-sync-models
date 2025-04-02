@@ -62,7 +62,7 @@ public class Job {
 		AtomicInteger inc1 = new AtomicInteger(1);
 		List<Job> repeatedItems = jobs.stream()
 				.filter(i -> frequency(jobs, i) > 1)
-				.sorted(getJobComparator())
+				.sorted(getJobRepeatedComparator())
 				.map(getJobMapFunction(inc1))
 				.toList();
 
@@ -76,6 +76,10 @@ public class Job {
 		return new ArrayList<>(notRepeatedItems) {{
 			addAll(repeatedItems);
 		}};
+	}
+
+	private static Comparator<Job> getJobRepeatedComparator() {
+		return Comparator.comparing(job -> job.name + "%" + typesIds.getOrDefault(job.buildType, 100));
 	}
 
 	private static Comparator<Job> getJobComparator() {
