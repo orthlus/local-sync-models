@@ -3,6 +3,7 @@ package art.aelaort.models.servers;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.With;
 import lombok.extern.jackson.Jacksonized;
 
 @Getter
@@ -27,4 +28,7 @@ public class K8sService {
 	private Integer nodePort;
 	@JsonProperty
 	private Boolean hasAnotherPorts;
+	@With
+	@JsonProperty
+	private String route;
 }
