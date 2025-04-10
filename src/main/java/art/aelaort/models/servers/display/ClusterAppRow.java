@@ -20,7 +20,8 @@ public record ClusterAppRow(
 	@Override
 	public int compareTo(ClusterAppRow o) {
 		return Comparator.comparing(ClusterAppRow::cluster)
-				.thenComparing(ClusterAppRow::kind).reversed()
+				.thenComparing(ClusterAppRow::namespace)
+				.thenComparing(ClusterAppRow::kind)
 				.thenComparing(ClusterAppRow::name)
 				.compare(this, o);
 	}
