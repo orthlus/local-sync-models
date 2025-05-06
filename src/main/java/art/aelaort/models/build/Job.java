@@ -37,6 +37,8 @@ public class Job {
 	private boolean db;
 	@JsonProperty
 	private boolean deprecated;
+	@JsonProperty
+	private boolean git;
 
 	private final static Map<String, Integer> typesIds = Map.of(
 			"java_docker", 1,
