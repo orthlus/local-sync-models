@@ -39,6 +39,8 @@ public class Job {
 	private boolean deprecated;
 	@JsonProperty
 	private boolean git;
+	@Nullable
+	private String dockerUrl;
 
 	private final static Map<String, Integer> typesIds = Map.of(
 			"java_docker", 1,
@@ -49,6 +51,10 @@ public class Job {
 			"frontend_vue", 6
 	);
 
+	@JsonProperty("docker_url")
+	public void setDockerUrl(String dockerUrl) {
+		this.dockerUrl = dockerUrl.isEmpty() ? null : dockerUrl;
+	}
 
 	@JsonProperty("project_dir")
 	public void setProjectDir(String projectDir) {
