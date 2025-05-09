@@ -1,5 +1,6 @@
 package art.aelaort.models.build;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.annotation.Nullable;
 import lombok.AllArgsConstructor;
@@ -20,6 +21,7 @@ import static java.util.Collections.frequency;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Job {
 	@With
 	private Integer id;

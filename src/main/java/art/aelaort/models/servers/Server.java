@@ -1,5 +1,6 @@
 package art.aelaort.models.servers;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Getter;
@@ -16,6 +17,7 @@ import static java.lang.String.join;
 @Builder
 @Getter
 @Jacksonized
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Server {
 	@JsonProperty
 	@With
