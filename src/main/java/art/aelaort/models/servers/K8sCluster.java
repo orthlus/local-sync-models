@@ -1,5 +1,6 @@
 package art.aelaort.models.servers;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Getter;
@@ -13,6 +14,7 @@ import java.util.List;
 @Getter
 @Accessors(fluent = true)
 @Jacksonized
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class K8sCluster {
 	@JsonProperty
 	@With

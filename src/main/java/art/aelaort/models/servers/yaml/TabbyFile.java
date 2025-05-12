@@ -5,8 +5,8 @@ import lombok.Getter;
 
 import java.util.List;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
 @Getter
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class TabbyFile {
 	List<Profile> profiles;
 

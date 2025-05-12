@@ -7,9 +7,9 @@ import lombok.NoArgsConstructor;
 
 import java.util.Map;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
 @NoArgsConstructor
 @Getter
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class DockerComposeFile {
 	Map<String, Service> services;
 
