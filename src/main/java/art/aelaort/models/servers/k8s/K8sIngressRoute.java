@@ -14,6 +14,6 @@ public class K8sIngressRoute {
 	private String namespace;
 	private String match;
 	private String serviceName;
-	private String servicePort;
+	private Integer servicePort;
 	private boolean hasTls;
 }
