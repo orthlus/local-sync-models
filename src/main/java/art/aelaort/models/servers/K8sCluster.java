@@ -23,4 +23,6 @@ public class K8sCluster {
 	private List<K8sService> services;
 	@JsonProperty
 	private List<String> nodes;
+	@JsonProperty
+	private List<K8sHelmChart> helmCharts;
 }
