@@ -1,4 +1,4 @@
-package art.aelaort.models.servers;
+package art.aelaort.models.servers.k8s;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -11,26 +11,26 @@ import lombok.extern.jackson.Jacksonized;
 @Builder
 @Jacksonized
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class K8sService {
+public class K8sApp {
 	@JsonProperty
 	private String name;
 	@JsonProperty
 	private String namespace;
 	@JsonProperty
+	private String podName;
+	@JsonProperty
+	@With
+	private String image;
+	@JsonProperty
 	private String kind;
 	@JsonProperty
-	private String type;
+	private String schedule;
 	@JsonProperty
-	private String appSelector;
+	private String strategyType;
 	@JsonProperty
-	private Integer port;
+	private String containerName;
 	@JsonProperty
-	private String targetPort;
+	private String imagePullPolicy;
 	@JsonProperty
-	private Integer nodePort;
-	@JsonProperty
-	private Boolean hasAnotherPorts;
-	@With
-	@JsonProperty
-	private String route;
+	private String memoryLimit;
 }

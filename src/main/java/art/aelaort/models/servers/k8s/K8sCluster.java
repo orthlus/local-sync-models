@@ -1,4 +1,4 @@
-package art.aelaort.models.servers;
+package art.aelaort.models.servers.k8s;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

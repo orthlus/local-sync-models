@@ -1,4 +1,4 @@
-package art.aelaort.models.servers;
+package art.aelaort.models.servers.k8s;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Builder;
@@ -9,8 +9,7 @@ import lombok.extern.jackson.Jacksonized;
 @Builder
 @Jacksonized
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class K8sHelmChart {
-	private String repo;
-	private String chart;
-	private String targetNamespace;
+public class Service {
+	private String name;
+	private Integer port;
 }
