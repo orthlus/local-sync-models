@@ -27,4 +27,6 @@ public class K8sCluster {
 	private List<String> nodes;
 	@JsonProperty
 	private List<K8sHelmChart> helmCharts;
+	@JsonProperty
+	private List<K8sIngressRoute> ingressRoutes;
 }
