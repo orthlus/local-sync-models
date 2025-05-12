@@ -1,4 +1,4 @@
-package art.aelaort.models.servers.k8s;
+package art.aelaort.models.servers.k8s.input;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Builder;
@@ -9,7 +9,7 @@ import lombok.extern.jackson.Jacksonized;
 @Builder
 @Jacksonized
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Service {
-	private String name;
-	private Integer port;
+public class IngressRoute {
+	private Metadata metadata;
+	private IngressRouteSpec spec;
 }
