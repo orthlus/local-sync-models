@@ -17,9 +17,9 @@ public record K8sAppRow(
 		String imagePullPolicy,
 		String ports,
 		String service,
+		String route,
 		String memoryLimit,
-		String strategy,
-		String route
+		String strategy
 ) implements Comparable<K8sAppRow> {
 
 	@Override
