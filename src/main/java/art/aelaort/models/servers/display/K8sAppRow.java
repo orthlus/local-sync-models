@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public record ClusterAppRow(
+public record K8sAppRow(
 		@With
 		Integer id,
 		String cluster,
@@ -17,24 +17,23 @@ public record ClusterAppRow(
 		String imagePullPolicy,
 		String ports,
 		String service,
-		String schedule,
 		String memoryLimit,
 		String strategy,
 		String route
-) implements Comparable<ClusterAppRow> {
+) implements Comparable<K8sAppRow> {
 
 	@Override
-	public int compareTo(ClusterAppRow o) {
-		return Comparator.comparing(ClusterAppRow::cluster)
-				.thenComparing(ClusterAppRow::namespace)
-				.thenComparing(ClusterAppRow::kind)
-				.thenComparing(ClusterAppRow::name)
+	public int compareTo(K8sAppRow o) {
+		return Comparator.comparing(K8sAppRow::cluster)
+				.thenComparing(K8sAppRow::namespace)
+				.thenComparing(K8sAppRow::kind)
+				.thenComparing(K8sAppRow::name)
 				.compare(this, o);
 	}
 
-	public static List<ClusterAppRow> addNumbers(List<ClusterAppRow> clusterAppRows) {
+	public static List<K8sAppRow> addNumbers(List<K8sAppRow> k8sAppRows) {
 		AtomicInteger inc = new AtomicInteger(1);
-		return clusterAppRows.stream()
+		return k8sAppRows.stream()
 				.sorted()
 				.map(car -> car.withId(inc.getAndIncrement()))
 				.toList();
