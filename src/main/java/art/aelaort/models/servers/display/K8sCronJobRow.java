@@ -13,8 +13,8 @@ public record K8sCronJobRow(
 		String namespace,
 		String image,
 		String name,
-		String imagePullPolicy,
 		String schedule,
+		String imagePullPolicy,
 		String memoryLimit
 ) implements Comparable<K8sCronJobRow> {
 	@Override
