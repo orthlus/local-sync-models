@@ -43,6 +43,8 @@ public class Job {
 	private boolean git;
 	@Nullable
 	private String dockerUrl;
+	@JsonProperty("copy_git_in_build")
+	private boolean copyGitInBuild;
 
 	private final static Map<String, Integer> typesIds = Map.of(
 			"java_docker", 1,
