@@ -43,6 +43,10 @@ public class Job {
 	private boolean git;
 	@Nullable
 	private String dockerUrl;
+	@Nullable
+	private String dockerTag;
+	@Nullable
+	private String dockerImage;
 	@JsonProperty("copy_git_in_build")
 	private boolean copyGitInBuild;
 
@@ -54,6 +58,16 @@ public class Job {
 			"ya_func", 5,
 			"frontend_vue", 6
 	);
+
+	@JsonProperty("docker_image")
+	public void setDockerImage(String dockerImage) {
+		this.dockerImage = dockerImage.isEmpty() ? null : dockerImage;
+	}
+
+	@JsonProperty("docker_tag")
+	public void setDockerTag(String dockerTag) {
+		this.dockerTag = dockerTag.isEmpty() ? null : dockerTag;
+	}
 
 	@JsonProperty("docker_url")
 	public void setDockerUrl(String dockerUrl) {
