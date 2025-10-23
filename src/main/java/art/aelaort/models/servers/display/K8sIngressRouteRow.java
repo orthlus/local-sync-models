@@ -5,7 +5,6 @@ import java.util.Comparator;
 public record K8sIngressRouteRow(
 		String cluster,
 		String namespace,
-		String image,
 		String name,
 		String route
 ) implements Comparable<K8sIngressRouteRow> {
